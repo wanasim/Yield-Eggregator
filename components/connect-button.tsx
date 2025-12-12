@@ -11,5 +11,10 @@ export default function ConnectWalletButton({
 }: {
   className?: string;
 }) {
-  return <ConnectButton />;
+  return (
+    <ConnectButton
+      chainStatus={"none"}
+      showBalance={false}
+    />
+  );
 }

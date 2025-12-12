@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import {
   ArrowRight,
@@ -13,11 +11,6 @@ import {
 import { useAccount } from "wagmi";
 
 export default function Home() {
-  const { isConnected, address } = useAccount();
-  const shortAddress = address
-    ? `${address.slice(0, 6)}...${address.slice(-4)}`
-    : null;
-
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
@@ -30,16 +23,6 @@ export default function Home() {
                 Powered by Avail Nexus SDK
               </span>
             </div>
-
-            {/* Connection Badge */}
-            {isConnected && (
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-sm font-medium text-primary">
-                  {shortAddress} • Connected
-                </span>
-              </div>
-            )}
 
             {/* Main Heading */}
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">

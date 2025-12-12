@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import ThemeToggle from "./theme-toggle";
+import ConnectWalletButton from "./connect-button";
 
 export default function Navbar() {
   return (
@@ -10,7 +10,10 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link
+            href="/"
+            className="flex items-center space-x-2"
+          >
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
               Yield Eggregator
             </span>
@@ -41,11 +44,10 @@ export default function Navbar() {
           {/* Connect Wallet Button & Theme Toggle */}
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <ConnectButton />
+            <ConnectWalletButton />
           </div>
         </div>
       </div>
     </nav>
   );
 }
-

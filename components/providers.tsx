@@ -8,6 +8,7 @@ import {
   QueryClientProvider,
 } from "@tanstack/react-query";
 import { WagmiProvider } from "wagmi";
+import NexusProviders from "./nexus-providers";
 
 let browserQueryClient: QueryClient;
 
@@ -34,7 +35,9 @@ export function Providers({
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={getBrowserQueryClient()}>
-        <RainbowKitProvider>{children}</RainbowKitProvider>
+        <RainbowKitProvider>
+          <NexusProviders>{children}</NexusProviders>
+        </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
   );
